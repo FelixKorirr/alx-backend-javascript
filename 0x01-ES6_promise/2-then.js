@@ -3,11 +3,11 @@ export default function handleResponseFromAPI(promise) {
     console.log('Got a response from API');
     return {
       status: 200,
-      body: 'success',
+      body: 'success'
     };
   }).catch(() => {
     console.log('Got a response from API');
-    return new Error('not successful');
+    return new Error();
   }).finally(() => {
     console.log('Get a response from API');
   });
