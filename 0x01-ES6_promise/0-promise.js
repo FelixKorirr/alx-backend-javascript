@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-function getResponseFromAPI() {
+export default function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const x = 5 + 3;
