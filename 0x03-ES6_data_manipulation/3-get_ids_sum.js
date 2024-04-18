@@ -1,9 +1,4 @@
 export default function getStudentIdsSum(students) {
-  if (students instanceof Array) {
-    return students.reduce(
-      (prev, cur) => prev.id || prev + cur.id,
-      0,
-    );
-  }
-  return 0;
+  const result = students.reduce((accumulator, currentValue) => (accumulator + currentValue.id), 0);
+  return result;
 }
