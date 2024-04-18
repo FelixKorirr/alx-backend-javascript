@@ -4,7 +4,7 @@ export default function cleanSet(set, startString) {
     !set ||
     !startString ||
     !(set instanceof Set) ||
-    typeof startString !== "string"
+    typeof startString !== 'string'
   ) {
     return "";
   }
