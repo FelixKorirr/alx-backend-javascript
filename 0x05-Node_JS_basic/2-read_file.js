@@ -4,7 +4,7 @@ function countStudents(path) {
   if (!fs.existsSync(path)) {
     throw new Error('Cannot load the database');
   }
-  const items = fs.readFileSync(path, 'utf8');
+  const items = fs.readFileSync(path, 'utf8').trim();
   const myDATA = [];
   const CS = [];
   const SWE = [];
