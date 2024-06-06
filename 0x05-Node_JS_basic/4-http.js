@@ -10,5 +10,3 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, host);
-
-module.exports = server;
