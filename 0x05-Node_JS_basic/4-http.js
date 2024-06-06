@@ -9,6 +9,9 @@ const server = http.createServer((req, res) => {
   res.end('Hello Holberton School!');
 });
 
-server.listen(port, host);
+server.listen(port, host, ()=>{
+    console.log('...');
+    console.log('press CTRL-C to exit');
+});
 
 module.exports = server;
