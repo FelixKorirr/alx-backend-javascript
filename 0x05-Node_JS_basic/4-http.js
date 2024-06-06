@@ -10,6 +10,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, host, ()=>{
+    console.log(`Server is running from http://${host}:${port}`);
     console.log('...');
     console.log('press CTRL-C to exit');
 });
