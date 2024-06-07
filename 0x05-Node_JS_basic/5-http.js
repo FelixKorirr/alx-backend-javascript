@@ -40,3 +40,5 @@ server.listen(port, host, () => {
   console.log('...........');
   console.log('press CTRL-C to quit');
 });
+
+module.exports = server;
