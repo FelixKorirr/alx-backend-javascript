@@ -10,6 +10,8 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
+		res.statusCode=200;
+		res.setHeader('Content-Type', 'text/plain')
     res.write('This is the list of our students\n');
     countStudents(process.argv[2])
       .then((data) => {
@@ -26,9 +28,13 @@ const server = http.createServer((req, res) => {
         );
       })
       .catch((error) => {
+				res.statusCode=500;
+				res.setHeader('Content-Type', 'text/plain')
         res.end(error.message);
       });
   } else {
+		res.statusCode=404;
+		res.setHeader('Content-Type', 'text/plain')
     res.end('Page not Found');
   }
 });
