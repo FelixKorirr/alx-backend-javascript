@@ -1,0 +1,12 @@
+{
+  "name": "unittests_in_js",
+  "version": "1.0.0",
+  "description": "Unit tests in JS",
+  "scripts": {
+    "test": "mocha --require assert"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0"
+  }
+}
