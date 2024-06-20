@@ -1,16 +1,16 @@
-const fs = require("fs");
+const fs = require('fs');
 
 async function countStudents(path) {
   let data;
   try {
-    data = await fs.promises.readFile(path, "utf8");
+    data = await fs.promises.readFile(path, 'utf8');
   } catch (error) {
-    throw new Error("Cannot load the database");
+    throw new Error('Cannot load the database');
   }
   const students = data
-    .split("\r\n")
+    .split('\r\n')
     .slice(1)
-    .map((student) => student.split(","))
+    .map((student) => student.split(','))
     .map((student) => ({
       firstName: student[0],
       lastName: student[1],
