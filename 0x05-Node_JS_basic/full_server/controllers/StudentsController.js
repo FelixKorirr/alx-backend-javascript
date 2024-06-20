@@ -8,26 +8,26 @@ class StudentsController {
     readDatabase('./database.csv')
       .then((data) => {
         response.write(
-          `Number of students in CS: ${data['CS'].length}. List: ${data[
-            'CS'
-          ].join(', ')}\n`
+          `Number of students in CS: ${data.CS.length}. List: ${data.CS.join(
+            ', '
+          )}\n`
         );
         response.write(
-          `Number of students in SWE: ${data['SWE'].length}. List: ${data[
-            'SWE'
-          ].join(', ')}\n`
+          `Number of students in SWE: ${data.SWE.length}. List: ${data.SWE.join(
+            ', '
+          )}\n`
         );
         response.end();
       })
       .catch((err) => res.write(err.message))
       .finally(() => {
-        res.end();
+        response.end();
       });
   }
   static getAllStudentsByMajor(request, response) {
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/plain');
-    let { major } = request.params;
+    const { major } = request.params;
     if (major !== 'CS' && major !== 'SWE') {
       response.statusCode = 500;
       response.write('Major parameter must be CS or SWE\n');
