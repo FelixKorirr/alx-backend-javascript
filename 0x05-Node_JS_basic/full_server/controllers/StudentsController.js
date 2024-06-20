@@ -9,17 +9,17 @@ class StudentsController {
       .then((data) => {
         response.write(
           `Number of students in CS: ${data.CS.length}. List: ${data.CS.join(
-            ', '
-          )}\n`
+            ', ',
+          )}\n`,
         );
         response.write(
           `Number of students in SWE: ${data.SWE.length}. List: ${data.SWE.join(
-            ', '
-          )}\n`
+            ', ',
+          )}\n`,
         );
         response.end();
       })
-      .catch((err) => res.write(err.message))
+      .catch((err) => response.write(err.message))
       .finally(() => {
         response.end();
       });
